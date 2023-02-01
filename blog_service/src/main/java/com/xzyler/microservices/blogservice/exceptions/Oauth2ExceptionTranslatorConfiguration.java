@@ -17,7 +17,7 @@ import org.springframework.security.oauth2.provider.error.WebResponseExceptionTr
  *
  * @author Nitesh Thapa
  * @version 1.0
- * @since 1.0 - 2021
+ *  @since 1.0 - 2023
  * @for Security service
  */
 @Configuration

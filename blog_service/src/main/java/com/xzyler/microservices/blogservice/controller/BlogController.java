@@ -1,5 +1,7 @@
 package com.xzyler.microservices.blogservice.controller;
 
+import com.xzyler.microservices.blogservice.entity.Blog;
+import com.xzyler.microservices.blogservice.generic.controllers.GenericCrudBaseController;
 import com.xzyler.microservices.blogservice.proxy.UserServiceProxy;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class BlogController extends BaseController {
+public class BlogController extends GenericCrudBaseController<Blog, Integer> {
 
     private final UserServiceProxy userServiceProxy;
 

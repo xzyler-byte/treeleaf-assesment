@@ -5,7 +5,7 @@ package com.xzyler.microservices.blogservice.exceptions;
  *
  * @author Nitesh Thapa
  * @version 1.0
- * @since 1.0 - 2021
+ *  @since 1.0 - 2023
  * @for Security service
  */
 public class NotFoundException extends Exception {
