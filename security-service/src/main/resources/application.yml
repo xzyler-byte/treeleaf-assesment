@@ -1,0 +1,74 @@
+spring:
+  flyway:
+    enabled: 'false'
+    baseline-on-migrate: 'true'
+  jackson:
+    serialization:
+      indent-output: 'true'
+      write-dates-as-timestamps: 'false'
+      fail-on-empty-beans: 'false'
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: 'true'
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: 'true'
+  datasource:
+    hikari:
+      idle-timeout: '10'
+      maximum-pool-size: '10'
+      connection-timeout: '30000'
+      max-lifetime: '360000'
+      minimum-idle: '5'
+    initialization-mode: always
+    password: root
+    username: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/auth?currentSchema=auth
+  application:
+    name: security-service
+server:
+  port: 8088
+logging:
+  level:
+    org:
+      hibernate:
+        type: debug
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: debug
+springdoc:
+  packages-to-scan: com.xzyler.microservices.securityservice
+
+security:
+  jwt:
+    key-store: classpath:keystore.jks
+    key-store-password: letmein
+    key-pair-alias: mytestkey
+    key-pair-password: changeme
+  oauth2:
+    client:
+      client-id: clientId
+      client-secret: secret
+    authorization:
+      jwt:
+        key-alias: mytestkey
+        key-password: changeme
+        key-store: classpath:keystore.jks
+        key-store-password: letmein
+        key-value: classpath:public.txt
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+ribbon:
+  eureka:
+    enabled: false
+
+

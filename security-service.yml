@@ -1,0 +1,55 @@
+security:
+  jwt:
+    key-pair-password: changeme
+    key-store-password: letmein
+    key-pair-alias: mytestkey
+    key-store: classpath:keystore.jks
+spring:
+  flyway:
+    enabled: 'true'
+    baseline-on-migrate: 'true'
+  jackson:
+    serialization:
+      indent-output: 'true'
+      write-dates-as-timestamps: 'false'
+      fail-on-empty-beans: 'false'
+    date-format: yyyy-MM-dd HH:mm:ss
+  main:
+    allow-bean-definition-overriding: 'true'
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: 'false'
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      idle-timeout: '10'
+      maximum-pool-size: '10'
+      connection-timeout: '30000'
+      max-lifetime: '360000'
+      minimum-idle: '5'
+    initialization-mode: always
+    password: root
+    username: root
+    url: jdbc:postgresql://localhost:5432/auth
+server:
+  port: 8088
+logging:
+  level:
+    org:
+      hibernate:
+        type: debug
+    com:
+      zaxxer:
+        hikari:
+          HikariConfig: debug
+springdoc:
+  packages-to-scan: com.xzyler.microservices.securityservice
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+

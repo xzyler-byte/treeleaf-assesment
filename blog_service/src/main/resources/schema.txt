@@ -1,0 +1,37 @@
+create table oauth_access_token
+(
+    token_id          varchar(256),
+    token             BINARY,
+    authentication_id varchar(256),
+    username         varchar(256),
+    client_id         varchar(256),
+    authentication    BINARY,
+    refresh_token     varchar(256)
+);
+CREATE TABLE oauth_client_details (
+    client_id               varchar(256) not null,
+   resource_ids            varchar(256),
+   client_secret           varchar(256) not null,
+    scope                   varchar(256),
+    authorized_grant_types  varchar(256),
+    web_server_redirect_uri varchar(256),
+    authorities             varchar(256),
+    access_token_validity   integer,
+    refresh_token_validity  integer,
+    additional_information  varchar(4000),
+    autoapprove            varchar(256),
+    PRIMARY KEY (client_id)
+);
+--
+create table oauth_code
+(
+    code           varchar(256),
+    authentication BINARY
+);
+--
+create table oauth_refresh_token
+(
+    token_id       varchar(256),
+    token          BINARY,
+    authentication BINARY
+);

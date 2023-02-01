@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xzyler-byte/spring-cloud-configuration-server
+server:
+  port: 8888          

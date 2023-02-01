@@ -1,0 +1,18 @@
+package com.xzyler.microservices.blogservice.generic.api.pagination.filter;
+
+import java.util.List;
+
+public class SetColumnFilter extends ColumnFilter {
+    private List<String> values;
+
+    public SetColumnFilter() {
+    }
+
+    public SetColumnFilter(List<String> values) {
+        this.values = values;
+    }
+
+    public List<String> getValues() {
+        return values;
+    }
+}

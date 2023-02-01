@@ -1,0 +1,10 @@
+-- The encrypted password is `xzyler@123`
+INSERT INTO oauth_client_details(client_id, resource_ids, client_secret, `scope`, authorized_grant_types, web_server_redirect_uri, authorities, access_token_validity, refresh_token_validity, additional_information, autoapprove)
+VALUES('xzyler', 'test', '{bcrypt}$2a$10$KtWOZz/L6J7.MuaWJ8f0aOjEFo44gv8xzKkYG8Ct68TLHHY1d/iSG', 'read,write', 'password,refresh_token,client_credentials', NULL, 'ROLE_CLIENT', 86400, NULL, NULL, NULL);
+
+-- The encrypted password is `admin@123`
+INSERT INTO Users(id, created_date, last_modified_date, created_by, last_modified_by, status, address, email, email_Confirmed, full_Name, gender, mobile_no, password, password_reset_token, username)
+VALUES(1, '2022-02-01 00:00:00', '2022-02-01 00:00:00', 1, 1, 'ACTIVE', 'U.S', 'admin@gmail.com', 1, 'Jhon Doe', 1, '+9779861165335', '{bcrypt}$2a$10$7BPGHit8JHON5vd7hhlYiuOG.crvYhAR2xHH3kAg/tUWl2a.56Wa2', NULL, 'admin');
+
+INSERT INTO User_Role(Id, created_date, last_modified_date, created_by, last_modified_by, status, role_name)
+VALUES(1, '2022-01-01 00:00:00', '2022-01-01 00:00:00', 1, 1, '1', 'Super Admin');
