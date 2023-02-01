@@ -5,8 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name = "netflix-zuul-api-gateway-server/security-service")
-@RibbonClient(name = "security-service")
+@FeignClient("security-service")
+@RibbonClient("security-service")
 public interface UserServiceProxy {
 
     @GetMapping("/api/user/get_all")

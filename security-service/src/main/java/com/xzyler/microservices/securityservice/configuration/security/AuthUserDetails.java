@@ -39,7 +39,6 @@ public class AuthUserDetails implements UserDetails {
         // Get User Authorities
         //Collection<Authority> userAuthorities = user.getAuthorities();
         //Set for Authorities Names
-        //TODO: Assign Current User Authorities
         Set<String> authorities = new HashSet<>();
         // Authorities from Roles
 //        userRoles.forEach(userRole -> {

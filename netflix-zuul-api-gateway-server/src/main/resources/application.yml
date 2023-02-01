@@ -3,7 +3,19 @@ server:
 spring:
   application:
     name: netflix-zuul-api-gateway-server
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 600s
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
 eureka:
   client:
     service-url:
       default-zone: http://localhost:8761/eureka
+    fetch-registry: true
+    refresh:
+      enable: true
